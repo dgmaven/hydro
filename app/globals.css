@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors */
+  --color-primary-50: #e6f2ff;
+  --color-primary-100: #cce5ff;
+  --color-primary-200: #99cbff;
+  --color-primary-300: #66b0ff;
+  --color-primary-400: #3396ff;
+  --color-primary-500: #003366;
+  --color-primary-600: #002952;
+  --color-primary-700: #001f3d;
+  --color-primary-800: #001429;
+  --color-primary-900: #000a14;
+
+  --color-accent-50: #e6f7f7;
+  --color-accent-100: #ccefef;
+  --color-accent-200: #99dfdf;
+  --color-accent-300: #66cfcf;
+  --color-accent-400: #33bfbf;
+  --color-accent-500: #008B8B;
+  --color-accent-600: #006f6f;
+  --color-accent-700: #005353;
+  --color-accent-800: #003838;
+  --color-accent-900: #001c1c;
+
+  --color-success-50: #e8f5e9;
+  --color-success-100: #c8e6c9;
+  --color-success-200: #a5d6a7;
+  --color-success-300: #81c784;
+  --color-success-400: #66bb6a;
+  --color-success-500: #2E8B57;
+  --color-success-600: #257d4a;
+  --color-success-700: #1d6e3d;
+  --color-success-800: #155f30;
+  --color-success-900: #0d5023;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .btn-accent {
+    @apply bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-600 mb-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, #003366 0%, #005a9c 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #008B8B 0%, #00cdcd 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500;
+  }
+}
